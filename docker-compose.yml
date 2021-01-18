@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+    
+  frontend:
+    container_name: frontend
+    environment:
+      - ENABLE_TELEMETRY=false
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+
+  backend:
+    depends_on:
+      - database
+    container_name: backend
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    restart: always
+    ports:
+      - ${WEBSITE_PORT}:${WEBSITE_PORT}
+    environment:
+      - PORT=${WEBSITE_PORT}
+      - DATABASE_URI=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@database:${DATABASE_PORT}/website
+    volumes:
+      - ./backend/src:/srv/app/bremauer-backend/src
+
+  database:
+    image: postgres:latest
+    container_name: postgre
+    restart: always
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: website
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_PORT: ${DATABASE_PORT}
+
+volumes:
+  pg_data:
+
+networks: 
+  default: 
+    external: 
+      name: website-network

@@ -1,0 +1,29 @@
+bremauer.cc, www.bremauer.cc {
+        rewrite / {
+                if {path} not_match ^/api
+                to {path} /
+        }
+	proxy /api backend:8000
+        header / {
+                X-XSS-Protection "1; mode=block"
+                X-Frame-Options SAMEORIGIN
+                X-Content-Type-Options nosniff
+                Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+                Referrer-Policy "no-referrer"
+                Content-Security-Policy upgrade-insecure-requests
+                Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=()"
+        }
+}
+
+drone.bremauer.cc {
+        proxy / drone:444
+        header / {
+                X-XSS-Protection "1; mode=block"
+                X-Frame-Options SAMEORIGIN
+                X-Content-Type-Options nosniff
+                Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+                Referrer-Policy "no-referrer"
+                Content-Security-Policy upgrade-insecure-requests
+                Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=()"
+        }
+}

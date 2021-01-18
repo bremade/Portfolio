@@ -1,0 +1,35 @@
+#######################
+####     Base      ####
+#######################
+*.env
+*.DS_Store
+
+#######################
+#### Frontend - Js ####
+#######################
+# Bundles
+frontend/public/build/
+# NPM dependencies
+*/node_modules
+# Rollup Side
+*stats.html
+
+# Production
+*/static/build
+*package-lock.json
+
+#######################
+#### Backend -  Go ####
+#######################
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Testing
+*/__pycache__
