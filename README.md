@@ -13,7 +13,7 @@ This is my repository for my Website using React as frontend and GoLang as backe
 #### Frontend Development - /frontend
 For frontend development the package livereload is used to automaticly reload the website on change.
 ```
-npm run dev  
+npm run start
 ```
 #### Backend Development - /backend
 For backend development only the main.go need to be started.
