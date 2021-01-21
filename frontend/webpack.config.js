@@ -2,11 +2,11 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebPackPlugin = require("copy-webpack-plugin");
 
 const SRC_DIR = path.join(__dirname, 'src');
+const SCRIPT_DIR = SRC_DIR + '/scripts';
 const BUILD_DIR = path.join(__dirname, 'build');
-const STYLE_DIR = path.join(__dirname, 'build/styles');
-const IMAGE_DIR = path.join(__dirname, 'build/images');
 const REACT_DIR = path.join(__dirname, 'node_modules', 'react');
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -42,6 +42,11 @@ const config = {
             template: "./index.html",
             favicon: "./favicon.ico",
         }),
+        new CopyWebPackPlugin({
+            patterns: [
+                { from: SCRIPT_DIR, to: BUILD_DIR + '/scripts' }
+            ]
+        })
     ],
     devServer: {
         historyApiFallback: true,
@@ -87,18 +92,14 @@ const config = {
                 include: [
                     SRC_DIR,
                     path.resolve(__dirname, 'node_modules/bootstrap/fonts'),
-                ],
-                exclude: [
-                    IMAGE_DIR
                 ]
             },
             {
                 test: /\.(jpg|jpeg|png|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    }
-                ]
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'assets'
+                }
             }
         ]
     },

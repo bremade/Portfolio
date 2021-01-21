@@ -7,7 +7,6 @@ bremauer.cc, www.bremauer.cc {
         header / {
                 X-XSS-Protection "1; mode=block"
                 X-Frame-Options SAMEORIGIN
-                X-Content-Type-Options nosniff
                 Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
                 Referrer-Policy "no-referrer"
                 Content-Security-Policy upgrade-insecure-requests
@@ -20,7 +19,6 @@ drone.bremauer.cc {
         header / {
                 X-XSS-Protection "1; mode=block"
                 X-Frame-Options SAMEORIGIN
-                X-Content-Type-Options nosniff
                 Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
                 Referrer-Policy "no-referrer"
                 Content-Security-Policy upgrade-insecure-requests
