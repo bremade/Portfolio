@@ -5,8 +5,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const SRC_DIR = path.join(__dirname, 'src');
 const BUILD_DIR = path.join(__dirname, 'build');
-const STYLE_DIR = path.join(__dirname, 'build/styles');
-const IMAGE_DIR = path.join(__dirname, 'build/images');
 const REACT_DIR = path.join(__dirname, 'node_modules', 'react');
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -17,11 +15,13 @@ const extractor = new MiniCssExtractPlugin({
 })
 
 const devOutput = {
+    publicPath: "/",
     path: BUILD_DIR,
     filename: "bundle.js"
 }
 
 const prodOutput = {
+    publicPath: "/",
     path: BUILD_DIR,
     filename: "[name].[chunkhash].bundle.js",
     chunkFilename: "[name].[chunkhash].bundle.js"
@@ -87,18 +87,14 @@ const config = {
                 include: [
                     SRC_DIR,
                     path.resolve(__dirname, 'node_modules/bootstrap/fonts'),
-                ],
-                exclude: [
-                    IMAGE_DIR
                 ]
             },
             {
                 test: /\.(jpg|jpeg|png|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    }
-                ]
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'assets'
+                }
             }
         ]
     },
