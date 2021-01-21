@@ -8,14 +8,13 @@
 #### Frontend - Js ####
 #######################
 # Bundles
-frontend/public/build/
+frontend/build/*
 # NPM dependencies
 */node_modules
-# Rollup Side
-*stats.html
+# Track empty build folder
+!frontend/build/.gitkeep
 
 # Production
-*/static/build
 *package-lock.json
 
 #######################
