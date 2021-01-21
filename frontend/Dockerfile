@@ -9,4 +9,4 @@ EXPOSE 80
 EXPOSE 443
 COPY ./Caddyfile /etc/Caddyfile
 COPY ./data /root/.caddy
-COPY --from=frontend-builder /opt/Portfolio/public /srv
+COPY --from=frontend-builder /opt/Portfolio/build /srv

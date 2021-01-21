@@ -21,6 +21,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 180;
 
@@ -91,7 +92,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ListItemLink(props) {
-    return <ListItem button component="a" {...props} />;
+    const { to } = props;
+
+    const CustomLink = React.useMemo(
+      () =>
+        React.forwardRef((linkProps, ref) => (
+          <Link to={to} {...linkProps} />
+        )),
+      [to],
+    );
+
+    return <ListItem button component={CustomLink} {...props} />;
   }
 
 function ResponsiveDrawer(props) {
@@ -128,63 +139,63 @@ function ResponsiveDrawer(props) {
             <ListItemLink 
             button 
             className={classes.link}
-            href="#about"
             selected={selectedIndex === 0}
-            onClick={event => handleListItemClick(event, 0)}>
+            onClick={event => handleListItemClick(event, 0)}
+            to="/#about">
                 <ListItemIcon><PersonIcon/></ListItemIcon>
                 <ListItemText primary="About"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="#skills"
             className={classes.link}
             selected={selectedIndex === 1}
-            onClick={event => handleListItemClick(event, 1)}>
+            onClick={event => handleListItemClick(event, 1)}
+            to="/#skills">
                 <ListItemIcon><BarChartIcon/></ListItemIcon>
                 <ListItemText primary="Skills"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="#experience"
             className={classes.link}
             selected={selectedIndex === 2}
-            onClick={event => handleListItemClick(event, 2)}>
+            onClick={event => handleListItemClick(event, 2)}
+            to="/#experience">
                 <ListItemIcon><TimelineIcon/></ListItemIcon>
                 <ListItemText primary="Experience"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="#projects"
             className={classes.link}
             selected={selectedIndex === 4}
-            onClick={event => handleListItemClick(event, 4)}>
+            onClick={event => handleListItemClick(event, 4)}
+            to="/#projects">
                 <ListItemIcon><EmojiObjectsIcon/></ListItemIcon>
                 <ListItemText primary="Projects"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="#blog"
             className={classes.link}
             selected={selectedIndex === 5}
-            onClick={event => handleListItemClick(event, 5)}>
+            onClick={event => handleListItemClick(event, 5)}
+            to="/#blog">
                 <ListItemIcon><CreateIcon/></ListItemIcon>
                 <ListItemText primary="Blog"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="#contact"
             className={classes.link}
             selected={selectedIndex === 6}
-            onClick={event => handleListItemClick(event, 6)}>
+            onClick={event => handleListItemClick(event, 6)}
+            to="/#contact">
                 <ListItemIcon><MailIcon/></ListItemIcon>
                 <ListItemText primary="Contact"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            href="/imprint"
             className={classes.link}
             selected={selectedIndex === 7}
-            onClick={event => handleListItemClick(event, 7)}>
+            onClick={event => handleListItemClick(event, 7)}
+            to="/imprint">
                 <ListItemIcon><AssignmentIcon/></ListItemIcon>
                 <ListItemText primary="Imprint"/>
             </ListItemLink>
