@@ -2,8 +2,10 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebPackPlugin = require("copy-webpack-plugin");
 
 const SRC_DIR = path.join(__dirname, 'src');
+const SCRIPT_DIR = SRC_DIR + '/scripts';
 const BUILD_DIR = path.join(__dirname, 'build');
 const REACT_DIR = path.join(__dirname, 'node_modules', 'react');
 
@@ -15,13 +17,11 @@ const extractor = new MiniCssExtractPlugin({
 })
 
 const devOutput = {
-    publicPath: "/",
     path: BUILD_DIR,
     filename: "bundle.js"
 }
 
 const prodOutput = {
-    publicPath: "/",
     path: BUILD_DIR,
     filename: "[name].[chunkhash].bundle.js",
     chunkFilename: "[name].[chunkhash].bundle.js"
@@ -42,6 +42,11 @@ const config = {
             template: "./index.html",
             favicon: "./favicon.ico",
         }),
+        new CopyWebPackPlugin({
+            patterns: [
+                { from: SCRIPT_DIR, to: BUILD_DIR + '/scripts' }
+            ]
+        })
     ],
     devServer: {
         historyApiFallback: true,
