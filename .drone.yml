@@ -1,0 +1,33 @@
+kind: pipeline
+type: docker
+name: portfolio-cicd
+
+steps:
+  - name: Deployment
+    image: docker/compose
+    volumes:
+      - name: docker_socket
+        path: /var/run/docker.sock
+    commands:
+      - docker-compose down
+      - docker system prune -a -f
+      - docker-compose up --build -d
+    environment:
+        WEBSITE_PORT:
+          from_secret: WEBSITE_PORT
+        DATABASE_USER:
+          from_secret: DATABASE_USER
+        DATABASE_PASSWORD:
+          from_secret: DATABASE_PASSWORD
+        DATABASE_PORT:
+          from_secret: DATABASE_PORT
+    when:
+      branch:
+        - main
+      event:
+        - push
+
+volumes:
+    - name: docker_socket
+      host:
+        path: /var/run/docker.sock

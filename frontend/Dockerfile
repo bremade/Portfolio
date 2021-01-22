@@ -5,8 +5,5 @@ RUN npm install
 RUN npm run build
 
 FROM abiosoft/caddy
-EXPOSE 80
-EXPOSE 443
 COPY ./Caddyfile /etc/Caddyfile
-COPY ./data /root/.caddy
 COPY --from=frontend-builder /opt/Portfolio/build /srv
