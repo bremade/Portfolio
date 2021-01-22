@@ -9,9 +9,8 @@ steps:
       - name: docker_socket
         path: /var/run/docker.sock
     commands:
-      - docker-compose down
-      - docker system prune -a -f
       - docker-compose up --build -d
+      - docker system prune -a -f
     environment:
         WEBSITE_PORT:
           from_secret: WEBSITE_PORT
