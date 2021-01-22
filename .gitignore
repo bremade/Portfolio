@@ -14,9 +14,6 @@ frontend/build/*
 # Track empty build folder
 !frontend/build/.gitkeep
 
-# Production
-*package-lock.json
-
 #######################
 #### Backend -  Go ####
 #######################
