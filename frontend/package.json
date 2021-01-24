@@ -9,14 +9,13 @@
   "homepage": "https://bremauer.cc/",
   "license": "GPL 3.0",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --watch --mode=development",
+    "start": "cross-env NODE_ENV=development webpack serve --mode=development",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
     "build:dev": "cross-env NODE_ENV=development webpack --mode=development",
     "lint": "eslint --fix --ext .jsx,.js src"
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
@@ -58,6 +57,7 @@
     "popper.js": "^1.16.1",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",

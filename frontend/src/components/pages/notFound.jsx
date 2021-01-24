@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 class NotFound extends Component {
 
@@ -20,7 +20,7 @@ class NotFound extends Component {
                     <h2 className="notfoundh2">
                         im sorry, but the page you requested was not found
                     </h2>
-                    <Link className="notfoundbutton" to="/">Home Page</Link>
+                    <Link className="notfoundbutton" to="/#">Home Page</Link>
                 </div>
             </div>
         );

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {HashLink as Link} from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 
 class Imprint extends Component {
 
 	render() {
 		return (
-            <div>
+            <div className="baseRoot" id="page-top">
                 <div className="container-fluid section">
                     <div id="imptop" style={{position: 'absolute', top: '-100px', left: 0}}/>
                     <div className="container">
@@ -108,10 +108,11 @@ class Imprint extends Component {
                             <a className="link-color" href="https://www.e-recht24.de">eRecht24</a>
                         </p>
                         <div style={{textAlign: "center"}}>
-                            <Link className="impbutton"
-                            to="/imprint#imptop"
-                            scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-                                <span className="">To Top</span>
+                            <Link className="impbutton" smooth to="/#">
+                                <span>Home</span>
+                            </Link>
+                            <Link className="impbutton" smooth to="#">
+                                <span>To Top</span>
                             </Link>
                         </div>
                     </div>

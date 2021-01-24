@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 
-class Contact extends Component {
+class Blog extends Component {
 	render() {
         return (
             <div>
                 <h3 className="sectionTitle">
-                    Contact
+                    Blog
                 </h3>
                 <div className="sectionContainer">
                     <Typography paragraph className="contentBlock">
@@ -26,4 +26,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default Blog;

@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Amiko');
-@import './footer.scss';
-@import './header.scss';
-@import './skillbar.scss';
-@import './about.scss';
-@import './contact.scss';
-@import './notfound.scss';
-@import './imprint.scss';
+@import './staticComponents/footer.scss';
+@import './staticComponents/sidebar.scss';
+@import './subComponents/skillbar.scss';
+@import './subComponents/experience.scss';
+@import './subComponents/about.scss';
+@import './subComponents/contact.scss';
+@import './components/notfound.scss';
+@import './components/imprint.scss';
+@import './components/homepage.scss';
 
 body {
      box-sizing: border-box;
@@ -41,14 +43,8 @@ body {
 .spacersection {
      padding-top: 0px;
      padding-bottom: 40px;
-     @media only screen and (max-width: 767px) {
+     @media only screen and (max-width: 1280px) {
           padding-top: 20px;
           padding-bottom: 5px;
      }
-}
-.timelineText {
-     font-weight: 400;
-}
-.timelineBox {
-     margin-bottom: 50px !important;
 }
