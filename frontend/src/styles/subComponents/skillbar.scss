@@ -1,0 +1,115 @@
+body {
+    font-family:'Source Sans Pro',Arial,sans-serif;
+    background:white
+  }
+section {
+    overflow-x:none;
+}
+.container-skillbar {
+      width:100%;
+      margin:30px;
+      height:auto;
+      overflow:none;
+}
+.skillbar {
+    position:relative;
+    display:block;
+    margin-bottom:15px;
+    width:95%;
+    background:#141414;
+    height:30px;
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    -webkit-transition:0.4s linear;
+    -moz-transition:0.4s linear;
+    -ms-transition:0.4s linear;
+    -o-transition:0.4s linear;
+    transition:0.4s linear;
+    -webkit-transition-property:width, background-color;
+    -moz-transition-property:width, background-color;
+    -ms-transition-property:width, background-color;
+    -o-transition-property:width, background-color;
+    transition-property:width, background-color;
+
+}
+.skillbar-title {
+    position:absolute;
+    top:0;
+    left:0;
+    width:90px;
+    font-weight:bold;
+    font-size:13px;
+    color:#141414;
+    background:#6adcfa;
+    -webkit-border-top-left-radius:7px;
+    -webkit-border-bottom-left-radius:7px;
+    -moz-border-radius-topleft:7px;
+    -moz-border-radius-bottomleft:7px;
+    border-top-left-radius:7px;
+    border-bottom-left-radius:7px;
+}
+.skillbar-title span {
+    display:block;
+    background:rgba(0, 0, 0, 0.15);
+    padding:0 20px;
+    height:30px;
+    line-height:30px;
+    -webkit-border-top-left-radius:7px;
+    -webkit-border-bottom-left-radius:7px;
+    -moz-border-radius-topleft:7px;
+    -moz-border-radius-bottomleft:7px;
+    border-top-left-radius:7px;
+    border-bottom-left-radius:7px;
+}
+.skillbar-bar {
+    height:30px;
+    width:0;
+    border-radius:15px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+}
+.skill-bar-percent {
+    position:absolute;
+    right:10px;
+    top:0;
+    font-size:11px;
+    height:30px;
+    line-height:30px;
+    color:#ffffff;
+    color:rgba(225, 225, 225, 0.75);
+}
+.left {
+    display: block;
+    position: relative;
+    width: 37%;
+}
+.right {
+    display: block;
+    position: relative;
+    width: 63%;
+}
+.cardRoot {
+    min-width: 275px;
+    margin-bottom: 40px;
+}
+.cardContent {
+    display: flex;
+    flex-direction: row;
+}
+.cardContentItem {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    align-items: center;
+    text-align: center;
+}
+.cardHeader {
+    color: #912c31;
+}
+.sliderValue {
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 14px;
+    color: grey;
+}

@@ -21,96 +21,61 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const drawerWidth = 180;
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        color: '#912c31'
-    },
     drawer: {
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('lg')]: {
         width: drawerWidth,
         flexShrink: 0,
         },
     },
+    drawerPaper: {
+      width: drawerWidth,
+    },
     appBar: {
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('lg')]: {
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
       },
     },
     menuButton: {
       marginRight: theme.spacing(2),
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('lg')]: {
         display: 'none',
       },
     },
     toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-      width: drawerWidth,
-    },
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
-    },
-    logo: {
-        display: 'flex',
-        alignItems: 'center',
-        textAlign: 'center',
-        color: 'black !important',
-        textDecoration: 'none !important',
-    },
-    logoSmUp: {
-      minHeight: 120
-    },
-    logoHead: {
-        lineHeight: '24px',
-        fontSize: '24px',
-        fontWeight: 200,
-        color: '#912c31',
-    },
-    logoSub: {
-        lineHeight: '24px',
-        fontSize: '14px',
-        fontWeight: 200 
-    },
-    link: {
-        color: 'black !important',
-        textDecoration: 'none !important',
-        paddingTop: '8px !important',
-        paddingBottom: '8px !important',
-        paddingLeft: '16px !important',
-        paddingRight: '16px !important',
-        textDecoration: 'none !important',
-    },
-    selectedItemStyle: {
-        backgroundColor: 'red'
     }
 }));
 
 function ListItemLink(props) {
     const { to } = props;
 
-    const CustomLink = React.useMemo(
-      () =>
-        React.forwardRef((linkProps, ref) => (
-          <Link to={to} {...linkProps} />
-        )),
-      [to],
-    );
+    let CustomLink = React.forwardRef((linkProps, ref) => (
+      <Link smooth to={to} {...linkProps} />
+    ));
 
-    return <ListItem button component={CustomLink} {...props} />;
-  }
+    if(checkMobile()) {
+      CustomLink = React.forwardRef((linkProps, ref) => (
+        <Link smooth to={to} scroll={el => scrollWithOffset(el, 76)} {...linkProps} />
+      ));
+    }
+
+  return <ListItem button component={CustomLink} {...props} />;
+}
 
 function ResponsiveDrawer(props) {
   const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -122,80 +87,80 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-        <Hidden smDown implementation="css">
-        <a id="logo-block" aria-label="Move to top of the page" href="#page-top" className={`${classes.logo} ${classes.logoSmUp}`}>
-            <Grid container justify="center" spacing={0}>
-                <Grid item xs={12} className={classes.logoHead}>
-                    Jan Bremauer
-                </Grid>
-                <Grid item className={classes.logoSub}>
-                    <img src={Logo} width="22" height="22" alt="Logo" /> Personal Homepage
-                </Grid>
-            </Grid>
-        </a>
-        <Divider />
+        <Hidden id="desktopHeader" mdDown implementation="css">
+          <Link id="logo-block" smooth aria-label="Move to top of the page" to="#" className="logo logoMdDown">
+              <Grid container justify="center" spacing={0}>
+                  <Grid item xs={12} className="logoHead">
+                      Jan Bremauer
+                  </Grid>
+                  <Grid item className="logoSub">
+                      <img src={Logo} width="22" height="22" alt="Logo" /> Personal Homepage
+                  </Grid>
+              </Grid>
+          </Link>
+          <Divider />
         </Hidden>
         <List>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 0}
             onClick={event => handleListItemClick(event, 0)}
-            to="/#about">
+            to="#about">
                 <ListItemIcon><PersonIcon/></ListItemIcon>
                 <ListItemText primary="About"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 1}
             onClick={event => handleListItemClick(event, 1)}
-            to="/#skills">
+            to="#skills">
                 <ListItemIcon><BarChartIcon/></ListItemIcon>
                 <ListItemText primary="Skills"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 2}
             onClick={event => handleListItemClick(event, 2)}
-            to="/#experience">
+            to="#experience">
                 <ListItemIcon><TimelineIcon/></ListItemIcon>
                 <ListItemText primary="Experience"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 4}
             onClick={event => handleListItemClick(event, 4)}
-            to="/#projects">
+            to="#projects">
                 <ListItemIcon><EmojiObjectsIcon/></ListItemIcon>
                 <ListItemText primary="Projects"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 5}
             onClick={event => handleListItemClick(event, 5)}
-            to="/#blog">
+            to="#blog">
                 <ListItemIcon><CreateIcon/></ListItemIcon>
                 <ListItemText primary="Blog"/>
             </ListItemLink>
             <ListItemLink 
             button 
-            className={classes.link}
+            className="link"
             selected={selectedIndex === 6}
             onClick={event => handleListItemClick(event, 6)}
-            to="/#contact">
+            to="#contact">
                 <ListItemIcon><MailIcon/></ListItemIcon>
                 <ListItemText primary="Contact"/>
             </ListItemLink>
             <ListItemLink 
-            button 
-            className={classes.link}
+            button
+            className="link"
             selected={selectedIndex === 7}
             onClick={event => handleListItemClick(event, 7)}
-            to="/imprint">
+            to="/imprint#">
                 <ListItemIcon><AssignmentIcon/></ListItemIcon>
                 <ListItemText primary="Imprint"/>
             </ListItemLink>
@@ -204,9 +169,9 @@ function ResponsiveDrawer(props) {
   );
 
   return (
-    <div className={classes.root}>
+    <div className="sbRoot">
       <CssBaseline />
-      <Hidden mdUp implementation="css">
+      <Hidden id="mobileHeader" lgUp implementation="css">
         <AppBar position="fixed" color='inherit' className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -222,23 +187,22 @@ function ResponsiveDrawer(props) {
                     marginLeft  : 'auto',
                     marginRight : 'auto'
                 }}>
-                  <a id="logo-block" aria-label="Move to top of the page" href="#page-top" className={classes.logo}>
+                  <Link id="logo-block" smooth aria-label="Move to top of the page" to="#" className="logo">
                     <Grid container justify="center" spacing={0}>
-                        <Grid item xs={12} className={classes.logoHead}>
-                            Jan Bremauer
+                        <Grid item xs={12} className="logoHead">
+                          Jan Bremauer
                         </Grid>
-                        <Grid item className={classes.logoSub}>
-                            <img src={Logo} width="22" height="22" alt="Logo" /> Personal Homepage
+                        <Grid item className="logoSub">
+                          <img src={Logo} width="22" height="22" alt="Logo" /> Personal Homepage
                         </Grid>
                     </Grid>
-                  </a>
+                  </Link>
             </div>
           </Toolbar>
         </AppBar>
       </Hidden>
       <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden mdUp implementation="css">
+        <Hidden id="mobileDrawer" lgUp implementation="css">
           <Drawer
             container={container}
             variant="temporary"
@@ -246,7 +210,7 @@ function ResponsiveDrawer(props) {
             open={mobileOpen}
             onClose={handleDrawerToggle}
             classes={{
-              paper: classes.drawerPaper,
+              paper: "drawerPaper"
             }}
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
@@ -254,7 +218,7 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden smDown implementation="css">
+        <Hidden id="dekstopDrawer" mdDown implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardsCollection from '../subComponents/cardsCollection';
+import CardsCollection from '../helpers/cardsCollection';
 
 class Brettspiel extends Component {
 
