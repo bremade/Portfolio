@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
-import CardsCollection from '../helpers/cardsCollection';
+import React from 'react';
+import CardsCollection from '../helpers/cardsCollection.jsx';
 
-class Brettspiel extends Component {
-
-	render() {
-		return (
-			<div>
-				<CardsCollection/>
-			</div>
-		)
-	}
+function Brettspiel() {
+  return (
+    <div>
+      <CardsCollection />
+    </div>
+  );
 }
 
 export default Brettspiel;

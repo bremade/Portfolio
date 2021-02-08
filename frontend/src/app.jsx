@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Homepage from './components/pages/homepage';
-import Imprint from './components/pages/imprint';
-import NoMatch from './components/pages/notFound';
-import Login from './components/pages/login';
-import Brettspiel from './components/pages/brettspiel';
+import Homepage from './components/pages/homepage.jsx';
+import Imprint from './components/pages/imprint.jsx';
+import NoMatch from './components/pages/notFound.jsx';
 
-export default class App extends Component {
-	render() {
-		return (
-			<Router>
-				<Switch>
-					<Route exact path='/' component={Homepage} />
-					<Route path='/imprint' component={Imprint} />
-					{/*<Route path='/brettspiel' component={Brettspiel} />*/}
-					<Route path='/login' component={Login} />
-					<Route component={NoMatch} />
-				</Switch>
-			</Router>
-		)
-	};
-};
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route path='/imprint' component={Imprint} />
+        {/* <Route path='/brettspiel' component={Brettspiel} /> */}
+        {/* <Route path='/login' component={Login} />*/}
+        <Route component={NoMatch} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;

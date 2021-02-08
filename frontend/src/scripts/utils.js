@@ -1,28 +1,28 @@
+/* eslint no-unused-vars: 0 */
+
 function checkMobile() {
-	return window.innerWidth <= 1280;
+  return window.innerWidth <= 1280;
 }
 
 function checkCentering() {
-	if (checkMobile()) {
-		return "center";
-	} else {
-		return "flex-start";
-	}
+  if (checkMobile()) {
+    return 'center';
+  }
+  return 'flex-start';
 }
 
 function checkPictureDimension() {
-	if (checkMobile()) {
-		return "70";
-	} else {
-		return "120";
-	}
+  if (checkMobile()) {
+    return '70';
+  }
+  return '120';
 }
 
 const scrollWithOffset = (el, offset) => {
-	const elementPosition = el.offsetTop - offset;
-	window.scroll({
-	  top: elementPosition,
-	  left: 0,
-	  behavior: "smooth"
-	})
-}  
+  const elementPosition = el.offsetTop - offset;
+  window.scroll({
+    top: elementPosition,
+    left: 0,
+    behavior: 'smooth',
+  });
+};

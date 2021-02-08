@@ -13,6 +13,8 @@ frontend/build/*
 */node_modules
 # Track empty build folder
 !frontend/build/.gitkeep
+# local eslintrc
+frontend/.local.eslintrc
 
 #######################
 #### Backend -  Go ####
