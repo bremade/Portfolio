@@ -1,43 +1,46 @@
-a:link, a:visited, a:hover, a:active {
-    color: white;
-    padding: 14px 4px;
-    text-decoration: none;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white;
+  padding: 14px 4px;
+  text-decoration: none;
 }
 
 .row-centered {
-    text-align:center;
+  text-align: center;
 }
 
 .col-left {
-    text-align:left;
+  text-align: left;
 }
 
 .col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
-    text-align: center;
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+  text-align: center;
 }
 
 .responsive {
-    @media only screen and (max-width: 991px) {
-        text-align: center;
-        padding: 5px;
-        width: 100%;
-    }
+  @media only screen and (max-width: 991px) {
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+  }
 }
 
 .responsiveAlign {
-    @media only screen and (max-width: 991px) {
-        margin-left: 0%;
-    }
+  @media only screen and (max-width: 991px) {
+    margin-left: 0%;
+  }
 }
 
 .footer {
-    @media only screen and (max-width: 991px) {
-        width: 100%;
-    }
+  @media only screen and (max-width: 991px) {
+    width: 100%;
+  }
 }

@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/all.scss'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import App from './app.jsx'
+import './styles/all.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './app.jsx';
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const app = React.createElement(App);
+ReactDOM.render(app, document.getElementById('root'));

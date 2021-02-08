@@ -1,58 +1,60 @@
 .coustomForm {
-    padding: .9375rem .625rem;
-    padding-top: 0.9375rem;
-    padding-right: 0.625rem;
-    padding-bottom: 0.9375rem;
-    padding-left: 0.625rem;
-    width: 100%;
-    border: 0;
-    background-color: #f1f1f1;
-    -webkit-transition: background-color .3s cubic-bezier(.215,.61,.355,1);
-    transition: background-color .3s cubic-bezier(.215,.61,.355,1);
+  padding: 0.9375rem 0.625rem;
+  padding-top: 0.9375rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 0.625rem;
+  width: 100%;
+  border: 0;
+  background-color: #f1f1f1;
+  -webkit-transition: background-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: background-color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .coustomArea {
-    //-36.5
-    height: 171.5px;
-    resize: none;
+  //-36.5
+  height: 171.5px;
+  resize: none;
 }
 
 .inputWrapper {
-    position: relative;
-    margin-bottom: 1.875rem;
-    opacity: 100;
+  position: relative;
+  margin-bottom: 1.875rem;
+  opacity: 100;
 }
 
 .coustomlabel {
-    display: block;
-    margin-bottom: .625rem;
-    font-size: .875rem;
+  display: block;
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
 }
 
 .labelText {
-    font-size: 1rem;
-    font-weight: 900;
+  font-size: 1rem;
+  font-weight: 900;
 }
 .labelRequired {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .buttonRow {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .text {
-    text-align: center;
+  text-align: center;
 }
 
 .coustomButton {
-    padding: 1.5rem 3.25rem;
-    color: #fff;
-    background-color: #000;
-    position: relative;
-    width: auto;
-    -webkit-transition: color .6s cubic-bezier(.215,.61,.355,1),background-color .6s cubic-bezier(.215,.61,.355,1);
-    transition: color .6s cubic-bezier(.215,.61,.355,1),background-color .6s cubic-bezier(.215,.61,.355,1);
+  padding: 1.5rem 3.25rem;
+  color: #fff;
+  background-color: #000;
+  position: relative;
+  width: auto;
+  -webkit-transition: color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
