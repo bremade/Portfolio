@@ -19,7 +19,7 @@ function About() {
       <h3 className='sectionTitle'>About</h3>
       <div className='sectionContainer'>
         <Typography variant='body1' className='contentBlockThick'>
-          Hi! I&quot;m Jan.
+          Hi! I&apos;m Jan.
         </Typography>
         <Typography variant='body1' className='contentBlock'>
           A {calculateAge()} year old Computer Science student from Munich,
