@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Emoji from '../helpers/emoji.jsx';
 
 function calculateAge() {
   const birthday = new Date(1998, 5, 15);
@@ -18,18 +17,26 @@ function About() {
     <div>
       <h3 className='sectionTitle'>About</h3>
       <div className='sectionContainer'>
-        <Typography variant='body1' className='contentBlockThick'>
-          Hi! I&apos;m Jan.
+        <Typography variant='body1' className='aboutTextThick'>
+          Hello, my name is Jan.
         </Typography>
-        <Typography variant='body1' className='contentBlock'>
-          A {calculateAge()} year old Computer Science student from Munich,
-          Germany.
+        <Typography variant='body1' className='aboutText'>
+          Im a {calculateAge()} year old Backend Developer and Computer Science
+          student from Munich, Germany. <br />
+          I&apos;m currently working as a Java Backend developer and finishing
+          my bachelor&apos;s degree in parallel.
         </Typography>
-        <Typography variant='body1' className='contentBlock'>
-          Welcome to my Website! <Emoji symbol='✌' label='victoryHand' />
-        </Typography>
-        <Typography variant='body1' className='contentBlock contentBlockTab'>
-          <strong>Current Focus:</strong> Java // Backend Development
+        <Typography variant='body1' className='aboutText'></Typography>
+        <Typography
+          component={'span'}
+          variant='body1'
+          className='aboutText aboutTextTab'
+        >
+          <strong>Current Focus:</strong>
+          <ul>
+            <li>Professional: Java // Backend Development</li>
+            <li>Private: Golang // React</li>
+          </ul>
         </Typography>
       </div>
     </div>

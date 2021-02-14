@@ -15,7 +15,7 @@ function checkPictureDimension() {
   if (checkMobile()) {
     return '70';
   }
-  return '120';
+  return '100';
 }
 
 const scrollWithOffset = (el, offset) => {

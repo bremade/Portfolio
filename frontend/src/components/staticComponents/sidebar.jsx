@@ -58,17 +58,18 @@ const useStyles = makeStyles((theme) => ({
 function ListItemLink(props) {
   const { to } = props;
 
-  const DefaultLink = React.forwardRef((linkProps) => (
-    <Link smooth to={to} {...linkProps} />
+  const DefaultLink = React.forwardRef((linkProps, ref) => (
+    <Link smooth to={to} {...linkProps} ref={ref} />
   ));
 
   if (checkMobile()) {
-    const MobileLink = React.forwardRef((linkProps) => (
+    const MobileLink = React.forwardRef((linkProps, ref) => (
       <Link
         smooth
         to={to}
         scroll={(el) => scrollWithOffset(el, 76)}
         {...linkProps}
+        ref={ref}
       />
     ));
     MobileLink.displayName = 'MobileLink';
@@ -78,8 +79,7 @@ function ListItemLink(props) {
   return <ListItem button component={DefaultLink} {...props} />;
 }
 
-function ResponsiveDrawer(props) {
-  const { container } = props;
+function ResponsiveDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -95,7 +95,7 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <Hidden id='desktopHeader' mdDown implementation='css'>
+      <Hidden mdDown implementation='css'>
         <Link
           id='logo-block'
           smooth
@@ -207,7 +207,7 @@ function ResponsiveDrawer(props) {
   return (
     <div className='sbRoot'>
       <CssBaseline />
-      <Hidden id='mobileHeader' lgUp implementation='css'>
+      <Hidden lgUp implementation='css'>
         <AppBar position='fixed' color='inherit' className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -247,9 +247,8 @@ function ResponsiveDrawer(props) {
         </AppBar>
       </Hidden>
       <nav className={classes.drawer} aria-label='mailbox folders'>
-        <Hidden id='mobileDrawer' lgUp implementation='css'>
+        <Hidden lgUp implementation='css'>
           <Drawer
-            container={container}
             variant='temporary'
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
@@ -264,7 +263,7 @@ function ResponsiveDrawer(props) {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden id='dekstopDrawer' mdDown implementation='css'>
+        <Hidden mdDown implementation='css'>
           <Drawer
             classes={{
               paper: classes.drawerPaper,
@@ -279,10 +278,6 @@ function ResponsiveDrawer(props) {
     </div>
   );
 }
-
-ResponsiveDrawer.propTypes = {
-  container: PropTypes.bool.isRequired,
-};
 
 ListItemLink.propTypes = {
   to: PropTypes.string.isRequired,
