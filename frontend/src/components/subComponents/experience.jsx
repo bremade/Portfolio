@@ -43,7 +43,7 @@ function Experience() {
             icon={<WorkIcon />}
           >
             <h3 className='vertical-timeline-element-title timelineText'>
-              Workstudent @doubleSlash Net-Business GmbH
+              Working Student @doubleSlash Net-Business GmbH
             </h3>
             <h4 className='vertical-timeline-element-subtitle timelineText'>
               Munich, Germany
