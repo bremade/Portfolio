@@ -14,14 +14,20 @@ steps:
       - docker-compose up -d
       - docker system prune -a -f
     environment:
-        WEBSITE_PORT:
-          from_secret: WEBSITE_PORT
-        DATABASE_USER:
-          from_secret: DATABASE_USER
-        DATABASE_PASSWORD:
-          from_secret: DATABASE_PASSWORD
-        DATABASE_PORT:
-          from_secret: DATABASE_PORT
+      WEBSITE_PORT:
+        from_secret: WEBSITE_PORT
+      DATABASE_USER:
+        from_secret: DATABASE_USER
+      DATABASE_PASSWORD:
+        from_secret: DATABASE_PASSWORD
+      DATABASE_PORT:
+        from_secret: DATABASE_PORT
+      CAPTCHA_SECRET:
+        from_secret: CAPTCHA_SECRET
+      MAIL_USERNAME:
+        from_secret: MAIL_USERNAME
+      MAIL_PASSWORD:
+        from_secret: MAIL_PASSWORD
     when:
       branch:
         - main
@@ -29,6 +35,6 @@ steps:
         - push
 
 volumes:
-    - name: docker_socket
-      host:
-        path: /var/run/docker.sock
+  - name: docker_socket
+    host:
+      path: /var/run/docker.sock

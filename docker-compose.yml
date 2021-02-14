@@ -1,7 +1,6 @@
 version: "3"
 
 services:
-    
   frontend:
     container_name: frontend
     environment:
@@ -20,6 +19,9 @@ services:
     restart: always
     environment:
       - PORT=${WEBSITE_PORT}
+      - CAPTCHA_SECRET=${CAPTCHA_SECRET}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
       - DATABASE_URI=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@database:${DATABASE_PORT}/website
     volumes:
       - ./backend/src:/srv/app/bremauer-backend/src
@@ -39,7 +41,7 @@ services:
 volumes:
   pg_data:
 
-networks: 
-  default: 
-    external: 
+networks:
+  default:
+    external:
       name: website-network

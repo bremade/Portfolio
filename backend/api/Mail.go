@@ -26,7 +26,7 @@ func (api *Api) SendMail(c *gin.Context) {
     err = util.CheckRecaptcha(clientSecret, mailRequest.Token);
 
     if err != nil {
-        c.String(http.StatusBadRequest, "Captach token is invalid: " + err.Error())
+        c.String(http.StatusBadRequest, "Captcha token is invalid")
         return
     }
 
