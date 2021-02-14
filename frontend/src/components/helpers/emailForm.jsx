@@ -24,7 +24,6 @@ async function onSubmit(data) {
     })
       .then(() => {
         Toast.success('Message was sent successfully.');
-        this.resetForm();
       })
       .catch(() => {
         Toast.fail('Message could not be sent.');
