@@ -21,23 +21,8 @@ For backend development only the main.go need to be started.
 go run main.go
 ```
 ### Server
-#### Transfer the data to the server:
-```
-rsync -avz /path/to/local/folder user@ip:/path/on/server   
-```
-#### Setting up Docker Container:
-Build start the docker containers.
-The following environment variables need to be set:
-| Variable          | Description                 |
-|-------------------|-----------------------------|
-| WEBSITE_PORT      | Port for the go application |
-| DATABASE_USER     | Database username to use    |
-| DATABASE_PASSWORD | Database password to use    |
-| DATABASE_PORT     | Port for the database       |
-```
-docker-compose build
-docker-compose up -d
-```
+#### Drone
+Use Pipeline as deployment
 
 ## Author
 Jan Bremauer
