@@ -23,6 +23,26 @@ function Experience() {
             icon={<SchoolIcon />}
           >
             <h3 className='vertical-timeline-element-title timelineText'>
+              Software Developer @doubleSlash Net-Business GmbH
+            </h3>
+            <h4 className='vertical-timeline-element-subtitle timelineText'>
+              Munich, Germany
+            </h4>
+            <p>
+              Java Backend Development <br /> Java // Docker //
+              PostgreSQL
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            contentStyle={{ background: 'rgb(255, 255, 255)', color: '#0' }}
+            contentArrowStyle={{
+              borderRight: '7px solid  rgb(255, 255, 255)',
+            }}
+            date='2021 - 2021'
+            iconStyle={{ background: '#912c31', color: '#fff' }}
+            icon={<SchoolIcon />}
+          >
+            <h3 className='vertical-timeline-element-title timelineText'>
               Bachelor Thesis @doubleSlash Net-Business GmbH
             </h3>
             <h4 className='vertical-timeline-element-subtitle timelineText'>
@@ -80,7 +100,7 @@ function Experience() {
             contentArrowStyle={{
               borderRight: '7px solid  rgb(255, 255, 255)',
             }}
-            date='2017 - present'
+            date='2017 - 2021'
             iconStyle={{ background: '#912c31', color: '#fff' }}
             icon={<SchoolIcon />}
           >

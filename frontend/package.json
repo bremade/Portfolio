@@ -12,7 +12,7 @@
     "start": "cross-env NODE_ENV=development webpack serve --mode=development",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
     "build:dev": "cross-env NODE_ENV=development webpack --mode=development",
-    "lint": "eslint -c ./.eslintrc --fix --ext .jsx,.js src"
+    "lint": "eslint -c ./*.eslintrc --fix --ext .jsx,.js src"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.15",
