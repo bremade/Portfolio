@@ -5,12 +5,25 @@
   max-width: 345px;
   width: 20%;
   margin: 0pt 10pt 20pt 10pt;
+  max-height: 690px;
   a:hover,
   a:active,
   a:focus {
     outline: none;
     border: 0;
     color: inherit;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    max-height: fit-content;
+    width: 50%;
+  }
+}
+
+.blogCardHeader {
+  height: 92px;
+  @media only screen and (max-width: 1280px) {
+    height: fit-content;
   }
 }
 
@@ -27,4 +40,5 @@
   background-color: #912c31 !important;
   color: white !important;
   margin-bottom: 20pt !important;
+  margin: auto;
 }

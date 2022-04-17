@@ -14,6 +14,8 @@ import {
   Grid,
 } from '@material-ui/core';
 import Git from '../../images/git.png';
+import Profile from '../../images/profil.png';
+import DsPreview from '../../images/blog.png';
 import { getRandomPosts, beautifyDate } from '../../scripts/blogUtils';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -41,6 +43,7 @@ function createCard(
   return (
     <Card key={keyId} className='blogCardRoot'>
       <CardHeader
+        className='blogCardHeader'
         avatar={
           <Avatar src={userpic} aria-label='avatar' className='blogCardAvatar'>
             {username}
@@ -100,8 +103,9 @@ class Blog extends Component {
         })
         .catch('getPostIds: error while retrieving blog posts.');
 
-      var randomPosts = getRandomPosts(posts, 4);
-      console.log(randomPosts);
+      var randomPosts = getRandomPosts(posts, 3);
+      // TODO: BRE-6: remove after testing is done
+      //console.log(randomPosts);
       this.setState({ posts: randomPosts });
     };
 
@@ -110,29 +114,40 @@ class Blog extends Component {
 
   renderProjectContent() {
     var projectContent = [];
+    projectContent.push(
+      createCard(
+        uuidv4(),
+        DsPreview,
+        Profile,
+        'Jan Bremauer',
+        'Serverless Functions auf Kubernetes',
+        beautifyDate('2022-03-03'),
+        'Serverless ist ein aufstrebendes Paradigma des Cloud-Computings und der am schnellsten wachsende Cloud-Trend in den letzten Jahren',
+        'https://blog.doubleslash.de/serverless-functions-auf-kubernetes-welche-open-source-loesung-ist-die-richtige/',
+      ),
+    );
 
     var posts = this.state.posts;
-    posts.forEach((post) => {
-      projectContent.push(
-        createCard(
-          uuidv4(),
-          post.feature_image,
-          post.primary_author.profile_image,
-          post.primary_author.name.substring(0, 2),
-          post.title,
-          beautifyDate(post.published_at.substring(0, 10)),
-          post.excerpt,
-          post.url,
-        ),
-      );
-    });
-
-    if (posts.length !== 0) {
+    if (posts.length === 0) {
       return projectContent;
-      //return createCard(Git, posts[0].id, 'Title', '15.05.1998', 'Test');
     }
-    return <div />;
-    //return projectContent;
+    if (!checkMobile()) {
+      posts.forEach((post) => {
+        projectContent.push(
+          createCard(
+            uuidv4(),
+            post.feature_image,
+            post.primary_author.profile_image,
+            post.primary_author.name.substring(0, 2),
+            post.title,
+            beautifyDate(post.published_at.substring(0, 10)),
+            post.excerpt,
+            post.url,
+          ),
+        );
+      });
+    }
+    return projectContent;
   }
 
   render() {
@@ -150,7 +165,22 @@ class Blog extends Component {
           >
             {this.renderProjectContent()}
           </Grid>
-          <Button className='blogReadMore'>Read more ...</Button>
+          <Grid
+            container
+            direction='row'
+            justifyContent='center'
+            alignItems='center'
+            alignContent='center'
+            className='sectionGrid'
+          >
+            <Button
+              className='blogReadMore'
+              target='_blank'
+              href='https://blog.bremauer.cc/'
+            >
+              Read more ...
+            </Button>
+          </Grid>
         </div>
       </div>
     );

@@ -1,5 +1,8 @@
 function getRandomPosts(posts, n) {
   var randomPosts = [];
+  if (posts.length === 0) {
+    return randomPosts;
+  }
   var postIds = [];
   posts.forEach((el) => {
     postIds.push(el.id);
