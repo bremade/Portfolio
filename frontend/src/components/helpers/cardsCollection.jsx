@@ -128,13 +128,18 @@ class CardsCollection extends Component {
       <Grid
         container
         direction='column'
-        justify='center'
+        justifyContent='center'
         alignItems='center'
         spacing={2}
         style={gridStyle}
       >
         <Grid item style={gridBottom}>
-          <Grid container direction='row' justify='center' alignItems='center'>
+          <Grid
+            container
+            direction='row'
+            justifyContent='center'
+            alignItems='center'
+          >
             {this.renderCards()}
           </Grid>
         </Grid>

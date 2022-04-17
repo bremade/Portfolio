@@ -103,7 +103,7 @@ function ResponsiveDrawer() {
           to='#'
           className='logo logoMdDown'
         >
-          <Grid container justify='center' spacing={0}>
+          <Grid container justifyContent='center' spacing={0}>
             <Grid item xs={12} className='logoHead'>
               Jan Bremauer
             </Grid>
@@ -232,7 +232,7 @@ function ResponsiveDrawer() {
                 to='#'
                 className='logo'
               >
-                <Grid container justify='center' spacing={0}>
+                <Grid container justifyContent='center' spacing={0}>
                   <Grid item xs={12} className='logoHead'>
                     Jan Bremauer
                   </Grid>

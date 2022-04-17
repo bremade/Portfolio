@@ -151,7 +151,7 @@ function Skills() {
           <Grid
             container
             direction='row'
-            justify={checkCentering()}
+            justifyContent={checkCentering()}
             alignItems='flex-start'
           >
             {renderCardContent('Java', Java)}
@@ -192,7 +192,7 @@ function Skills() {
           <Grid
             container
             direction='row'
-            justify={checkCentering()}
+            justifyContent={checkCentering()}
             alignItems='flex-start'
           >
             {renderCardContent('ReactJS', ReactJS)}
@@ -227,7 +227,7 @@ function Skills() {
           <Grid
             container
             direction='row'
-            justify={checkCentering()}
+            justifyContent={checkCentering()}
             alignItems='flex-start'
           >
             {renderCardContent('Windows', Windows)}
@@ -262,7 +262,7 @@ function Skills() {
           <Grid
             container
             direction='row'
-            justify={checkCentering()}
+            justifyContent={checkCentering()}
             alignItems='flex-start'
           >
             {renderCardContent('PostgreSQL', PostgreSQL)}
@@ -295,7 +295,7 @@ function Skills() {
           <Grid
             container
             direction='row'
-            justify={checkCentering()}
+            justifyContent={checkCentering()}
             alignItems='flex-start'
           >
             {renderCardContent('Docker', Docker)}

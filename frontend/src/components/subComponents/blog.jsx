@@ -53,7 +53,7 @@ function createCard(
       <CardContent>
         <Typography
           variant='body2'
-          noWrap='true'
+          noWrap={true}
           color='textSecondary'
           component='p'
         >
@@ -143,7 +143,7 @@ class Blog extends Component {
           <Grid
             container
             direction='row'
-            justify='center'
+            justifyContent='center'
             alignItems='center'
             alignContent='center'
             className='sectionGrid'
