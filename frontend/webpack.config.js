@@ -51,7 +51,7 @@ const config = {
   ],
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    static: './',
     port: 8000,
     hot: true,
     proxy: {

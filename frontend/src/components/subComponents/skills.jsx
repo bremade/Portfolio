@@ -112,7 +112,7 @@ function Skills() {
       skillName = `Linux ${skillName}`;
     }
     return (
-      <CardContent className='cardContentItem'>
+      <CardContent className='skillCardContentItem'>
         <img
           src={skillIcon}
           alt={skillName}
@@ -130,9 +130,9 @@ function Skills() {
     <div>
       <h3 className='sectionTitle'>Skills</h3>
       <div className='sectionContainer'>
-        <Card className='cardRoot'>
+        <Card className='skillCardRoot'>
           <CardHeader
-            className='cardHeader'
+            className='skillCardHeader'
             title='Programming Laguages'
             action={
               <IconButton
@@ -171,9 +171,9 @@ function Skills() {
             {renderSliderContent('C++', 10)}
           </Collapse>
         </Card>
-        <Card className='cardRoot'>
+        <Card className='skillCardRoot'>
           <CardHeader
-            className='cardHeader'
+            className='skillCardHeader'
             title='Frameworks'
             action={
               <IconButton
@@ -206,9 +206,9 @@ function Skills() {
             {renderSliderContent('Android', 10)}
           </Collapse>
         </Card>
-        <Card className='cardRoot'>
+        <Card className='skillCardRoot'>
           <CardHeader
-            className='cardHeader'
+            className='skillCardHeader'
             title='Operating Systems'
             action={
               <IconButton
@@ -241,9 +241,9 @@ function Skills() {
             {renderSliderContent('Fedora', 30)}
           </Collapse>
         </Card>
-        <Card className='cardRoot'>
+        <Card className='skillCardRoot'>
           <CardHeader
-            className='cardHeader'
+            className='skillCardHeader'
             title='Databases'
             action={
               <IconButton
@@ -274,9 +274,9 @@ function Skills() {
             {renderSliderContent('Oracle', 10)}
           </Collapse>
         </Card>
-        <Card className='cardRoot'>
+        <Card className='skillCardRoot'>
           <CardHeader
-            className='cardHeader'
+            className='skillCardHeader'
             title='Ops | Versioncontrol | Others'
             action={
               <IconButton

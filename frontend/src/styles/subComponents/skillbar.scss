@@ -88,22 +88,22 @@ section {
   position: relative;
   width: 63%;
 }
-.cardRoot {
+.skillCardRoot {
   min-width: 275px;
   margin-bottom: 40px;
 }
-.cardContent {
+.skillCardContent {
   display: flex;
   flex-direction: row;
 }
-.cardContentItem {
+.skillCardContentItem {
   display: flex;
   flex-direction: column;
   margin-right: 25px;
   align-items: center;
   text-align: center;
 }
-.cardHeader {
+.skillCardHeader {
   color: #912c31;
 }
 .sliderValue {

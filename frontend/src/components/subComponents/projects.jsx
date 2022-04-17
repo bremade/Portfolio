@@ -13,7 +13,7 @@ import {
 function renderProjectContent(projectImg, title, h2, body) {
   return (
     <Card
-      className='projectsRoot'
+      className='cardRoot'
       onMouseOver={this.toggleRaised()}
       onMouseOut={this.toggleRaised()}
       raised={this.state.raised}
@@ -21,11 +21,11 @@ function renderProjectContent(projectImg, title, h2, body) {
       <CardActionArea>
         <CardMedia
           component='img'
-          className='projectsMedia'
+          className='cardMedia'
           src={projectImg}
           title={title}
         />
-        <CardContent className='projectsContent'>
+        <CardContent className='cardContent'>
           <Typography
             gutterBottom
             variant='h5'
@@ -39,7 +39,7 @@ function renderProjectContent(projectImg, title, h2, body) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className='projectsButtons'>
+      <CardActions className='cardButtons'>
         <Button size='small' color='primary'>
           Share
         </Button>
