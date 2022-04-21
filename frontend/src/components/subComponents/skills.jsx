@@ -121,6 +121,7 @@ function Skills() {
   const [osExpanded, setOsExpanded] = React.useState(false);
   const [dbExpanded, setDbExpanded] = React.useState(false);
   const [opsExpanded, setOpsExpanded] = React.useState(false);
+  const [vcExpanded, setVCExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
   const handleDevExpandClick = () => {
@@ -137,6 +138,9 @@ function Skills() {
   };
   const handleOpsExpandClick = () => {
     setOpsExpanded(!opsExpanded);
+  };
+  const handleVCExpandClick = () => {
+    setVCExpanded(!vcExpanded);
   };
   const handleClickOpen = () => {
     setOpen(true);
@@ -188,17 +192,22 @@ function Skills() {
             title='Programming Laguages'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
-                    [classes.expandOpen]: opsExpanded,
+                    [classes.expandOpen]: devExpanded,
                   })}
-                  onClick={handleOpsExpandClick}
-                  aria-expanded={opsExpanded}
+                  onClick={handleDevExpandClick}
+                  aria-expanded={devExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -234,7 +243,11 @@ function Skills() {
             title='Dev-Ops'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -244,7 +257,8 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -278,17 +292,22 @@ function Skills() {
             title='Databases'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
-                    [classes.expandOpen]: opsExpanded,
+                    [classes.expandOpen]: dbExpanded,
                   })}
-                  onClick={handleOpsExpandClick}
-                  aria-expanded={opsExpanded}
+                  onClick={handleDbExpandClick}
+                  aria-expanded={dbExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -316,17 +335,22 @@ function Skills() {
             title='Versioncontrol | Others'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
-                    [classes.expandOpen]: opsExpanded,
+                    [classes.expandOpen]: vcExpanded,
                   })}
-                  onClick={handleOpsExpandClick}
-                  aria-expanded={opsExpanded}
+                  onClick={handleVCExpandClick}
+                  aria-expanded={vcExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -344,7 +368,7 @@ function Skills() {
             {renderCardContent('Arduino', Arduino)}
             {renderCardContent('Grafana', Grafana)}
           </Grid>
-          <Collapse in={opsExpanded} timeout='auto' unmountOnExit>
+          <Collapse in={vcExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
             {renderSliderContent('Git', 50)}
             {renderSliderContent('IntelliJ', 50)}
@@ -358,17 +382,22 @@ function Skills() {
             title='Frameworks'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
-                    [classes.expandOpen]: opsExpanded,
+                    [classes.expandOpen]: fwExpanded,
                   })}
-                  onClick={handleOpsExpandClick}
-                  aria-expanded={opsExpanded}
+                  onClick={handleFwExpandClick}
+                  aria-expanded={fwExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -398,17 +427,22 @@ function Skills() {
             title='Operating Systems'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
+                <IconButton
+                  onClick={handleClickOpen}
+                  aria-label='info'
+                  size='large'
+                >
                   <InfoIcon />
                 </IconButton>
                 <IconButton
                   className={clsx(classes.expand, {
-                    [classes.expandOpen]: opsExpanded,
+                    [classes.expandOpen]: osExpanded,
                   })}
-                  onClick={handleOpsExpandClick}
-                  aria-expanded={opsExpanded}
+                  onClick={handleOsExpandClick}
+                  aria-expanded={osExpanded}
                   aria-label='show more'
-                  size="large">
+                  size='large'
+                >
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
