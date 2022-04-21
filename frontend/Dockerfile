@@ -1,4 +1,4 @@
-FROM node:12.16.2 AS frontend-builder
+FROM node:latest AS frontend-builder
 WORKDIR /opt/Portfolio
 COPY ./frontend .
 RUN npm install
