@@ -32,7 +32,11 @@ async function onSubmit(data) {
 }
 
 function EmailForm() {
-  const { register, errors, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <div>
@@ -42,43 +46,33 @@ function EmailForm() {
             <input
               className='customForm'
               type='text'
-              name='name'
-              placeholder='Your name'
-              ref={register({
+              {...register('name', {
                 required: 'This field is required.',
                 maxLength: {
                   value: 51,
                   message: 'The name must be between 1 and 51 characters long.',
                 },
               })}
+              placeholder='Your name'
             />
-            <ErrorMessage
-              className='inputError'
-              errors={errors}
-              name='name'
-              render={({ message }) => <p className='inputError'>{message}</p>}
-            />
+            {errors.name && <p className='inputError'>{errors.name.message}</p>}
           </div>
           <div className='inputWrapper'>
             <input
               className='customForm'
               type='text'
-              name='email'
-              placeholder='Your email'
-              ref={register({
+              {...register('email', {
                 required: 'This field is required.',
                 pattern: {
                   value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                  message: 'Bitte gebe eine gültige E-Mail Adresse an.',
+                  message: 'Please provide a valid email adress.',
                 },
               })}
+              placeholder='Your email'
             />
-            <ErrorMessage
-              className='inputError'
-              errors={errors}
-              name='email'
-              render={({ message }) => <p className='inputError'>{message}</p>}
-            />
+            {errors.email && (
+              <p className='inputError'>{errors.email.message}</p>
+            )}
           </div>
         </div>
         <div>
@@ -86,10 +80,7 @@ function EmailForm() {
             <textarea
               className='customForm customArea'
               type='text'
-              name='message'
-              rows='5'
-              placeholder='Your message'
-              ref={register({
+              {...register('message', {
                 required: 'This field is required.',
                 maxLength: {
                   value: 5001,
@@ -97,13 +88,12 @@ function EmailForm() {
                     'The message must be between 1 and 5001 characters long.',
                 },
               })}
+              rows='5'
+              placeholder='Your message'
             />
-            <ErrorMessage
-              className='inputError'
-              errors={errors}
-              name='message'
-              render={({ message }) => <p className='inputError'>{message}</p>}
-            />
+            {errors.message && (
+              <p className='inputError'>{errors.message.message}</p>
+            )}
           </div>
         </div>
         <div className='buttonRow'>

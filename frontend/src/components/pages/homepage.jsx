@@ -3,6 +3,7 @@ import Sidebar from '../staticComponents/sidebar.jsx';
 import About from '../subComponents/about.jsx';
 import Skills from '../subComponents/skills.jsx';
 import Experience from '../subComponents/experience.jsx';
+import Blog from '../subComponents/blog.jsx';
 import Contact from '../subComponents/contact.jsx';
 
 function Homepage() {
@@ -20,7 +21,7 @@ function Homepage() {
           <Experience />
         </section>
         <section id='projects'>{/*<Projects />*/}</section>
-        <section id='blog'>{/*<Blog />*/}</section>
+        <section id='blog'>{<Blog />}</section>
         <section id='contact'>{<Contact />}</section>
       </main>
     </div>

@@ -6,15 +6,19 @@
 .baseMain {
   width: 100%;
 }
-.projectsRoot {
+.cardRoot {
   width: 380px;
   height: 380px;
   margin-bottom: 25px;
 }
-.projectsMedia {
+.cardContent {
+  display: flex;
+  flex-direction: row;
+}
+.cardMedia {
   height: 220px;
 }
-.projectsButtons {
+.cardButton {
   margin-top: auto;
   height: 10%;
 }

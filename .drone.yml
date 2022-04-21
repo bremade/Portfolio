@@ -28,6 +28,8 @@ steps:
         from_secret: MAIL_USERNAME
       MAIL_PASSWORD:
         from_secret: MAIL_PASSWORD
+      GHOST_KEY:
+        from_secret: GHOST_KEY
     when:
       branch:
         - main
