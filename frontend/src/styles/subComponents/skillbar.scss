@@ -106,9 +106,19 @@ section {
 .skillCardHeader {
   color: #912c31;
 }
-.sliderValue {
+.sliderKey {
   margin-right: 8px;
   margin-left: 8px;
   font-size: 14px;
   color: grey;
+  min-width: 80px;
+}
+
+.sliderValue {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.skillDialogWindow {
+  margin-left: 25px;
+  margin-right: 25px;
 }

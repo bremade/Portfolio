@@ -23,8 +23,7 @@ function About() {
         <Typography variant='body1' className='aboutText'>
           Im a {calculateAge()} year old Backend Developer and Computer Science
           student from Munich, Germany. <br />
-          I&apos;m currently working as a Java Backend developer and finishing
-          my bachelor&apos;s degree in parallel.
+          I&apos;m currently working as a Dev-Ops Java developer.
         </Typography>
         <Typography variant='body1' className='aboutText'></Typography>
         <Typography

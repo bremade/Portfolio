@@ -29,7 +29,7 @@ function Experience() {
               Munich, Germany
             </h4>
             <p>
-              Java Backend Development <br /> Java // Docker //
+              Java Backend Development <br /> Java // Docker // AWS //
               PostgreSQL
             </p>
           </VerticalTimelineElement>
