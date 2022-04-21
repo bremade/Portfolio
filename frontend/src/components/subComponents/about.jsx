@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
 function calculateAge() {
   const birthday = new Date(1998, 5, 15);

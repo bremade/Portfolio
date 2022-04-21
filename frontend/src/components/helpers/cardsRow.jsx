@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
-  CardContent,
-  Divider,
-  Typography,
-  Grid,
-} from '@material-ui/core';
+import { Card, CardContent, Divider, Typography, Grid } from '@mui/material';
 
 class CardsRow extends Component {
   constructor(props) {

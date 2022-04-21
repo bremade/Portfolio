@@ -1,6 +1,6 @@
 import React from 'react';
-import SchoolIcon from '@material-ui/icons/School';
-import WorkIcon from '@material-ui/icons/Work';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 import {
   VerticalTimeline,
   VerticalTimelineElement,

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Toast from 'light-toast';
-import { ErrorMessage } from '@hookform/error-message';
 import { useForm } from 'react-hook-form';
 
 const SITE_KEY = '6LehhVYaAAAAAEnJ3ynfzXqdA9k4PtEh3x63---T';

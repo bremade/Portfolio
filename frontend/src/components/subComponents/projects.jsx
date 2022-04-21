@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import {
   Card,
   CardContent,
   CardMedia,
   CardActions,
   CardActionArea,
-} from '@material-ui/core';
+} from '@mui/material';
 
 /* eslint-disable */
 function renderProjectContent(projectImg, title, h2, body) {

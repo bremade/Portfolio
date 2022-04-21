@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ShareIcon from '@material-ui/icons/Share';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import Typography from '@material-ui/core/Typography';
+import ShareIcon from '@mui/icons-material/Share';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import Typography from '@mui/material/Typography';
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import {
   Button,
   IconButton,
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import Git from '../../images/git.png';
 import Profile from '../../images/profil.png';
 import DsPreview from '../../images/blog.png';
@@ -64,13 +64,13 @@ function createCard(
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='settings' href={link}>
+        <IconButton aria-label='settings' href={link} size="large">
           <ExitToAppIcon />
         </IconButton>
         <IconButton
           aria-label='share'
           href={`mailto:?subject=${title}&body=${link}`}
-        >
+          size="large">
           <ShareIcon />
         </IconButton>
       </CardActions>

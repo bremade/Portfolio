@@ -1,11 +1,11 @@
 import React from 'react';
 import EmailForm from '../helpers/emailForm.jsx';
 import IconBox from '../helpers/iconBox.jsx';
-import Hidden from '@material-ui/core/Hidden';
-import EmailIcon from '@material-ui/icons/Email';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import InstagramIcon from '@material-ui/icons/Instagram';
+import Hidden from '@mui/material/Hidden';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Contact() {
   return (
@@ -47,7 +47,7 @@ function Contact() {
                               <IconBox icon={LinkedInIcon} />
                             </a>
                           </div>
-                          <Hidden mdDown>
+                          <Hidden lgDown>
                             <div className='col-md-12'>
                               <p className='mt-1 contactIconTitle'>LinkedIn</p>
                             </div>
@@ -61,7 +61,7 @@ function Contact() {
                               <IconBox icon={GitHubIcon} />
                             </a>
                           </div>
-                          <Hidden mdDown>
+                          <Hidden lgDown>
                             <div className='col-md-12'>
                               <p className='mt-1 contactIconTitle'>Github</p>
                             </div>
@@ -75,7 +75,7 @@ function Contact() {
                               <IconBox icon={InstagramIcon} />
                             </a>
                           </div>
-                          <Hidden mdDown>
+                          <Hidden lgDown>
                             <div className='col-md-12'>
                               <p className='mt-1 contactIconTitle'>Instagram</p>
                             </div>

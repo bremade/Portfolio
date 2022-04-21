@@ -1,15 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import InfoIcon from '@material-ui/icons/Info';
-import IconButton from '@material-ui/core/IconButton';
-import Slider from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
+import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import InfoIcon from '@mui/icons-material/Info';
+import IconButton from '@mui/material/IconButton';
+import Slider from '@mui/material/Slider';
+import Typography from '@mui/material/Typography';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
 import {
   Card,
   CardContent,
@@ -17,7 +17,7 @@ import {
   Collapse,
   Divider,
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import Git from '../../images/git.png';
 import Java from '../../images/java.png';
 import JavaScript from '../../images/javascript.png';
@@ -188,7 +188,7 @@ function Skills() {
             title='Programming Laguages'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -198,7 +198,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -234,7 +234,7 @@ function Skills() {
             title='Dev-Ops'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -244,7 +244,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -278,7 +278,7 @@ function Skills() {
             title='Databases'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -288,7 +288,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -316,7 +316,7 @@ function Skills() {
             title='Versioncontrol | Others'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -326,7 +326,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -358,7 +358,7 @@ function Skills() {
             title='Frameworks'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -368,7 +368,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>
@@ -398,7 +398,7 @@ function Skills() {
             title='Operating Systems'
             action={
               <div>
-                <IconButton onClick={handleClickOpen} aria-label='info'>
+                <IconButton onClick={handleClickOpen} aria-label='info' size="large">
                   <InfoIcon />
                 </IconButton>
                 <IconButton
@@ -408,7 +408,7 @@ function Skills() {
                   onClick={handleOpsExpandClick}
                   aria-expanded={opsExpanded}
                   aria-label='show more'
-                >
+                  size="large">
                   <ExpandMoreIcon />
                 </IconButton>
               </div>

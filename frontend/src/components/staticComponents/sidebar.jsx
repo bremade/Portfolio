@@ -1,25 +1,25 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
-import Hidden from '@material-ui/core/Hidden';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import CreateIcon from '@material-ui/icons/Create';
-import PersonIcon from '@material-ui/icons/Person';
-import TimelineIcon from '@material-ui/icons/Timeline';
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Hidden from '@mui/material/Hidden';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MailIcon from '@mui/icons-material/Mail';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import CreateIcon from '@mui/icons-material/Create';
+import PersonIcon from '@mui/icons-material/Person';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import { makeStyles, useTheme } from '@mui/styles';
+import { Grid } from '@mui/material';
 import { HashLink as Link } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import Logo from '../../images/logo.svg';
@@ -95,7 +95,7 @@ function ResponsiveDrawer() {
 
   const drawer = (
     <div>
-      <Hidden mdDown implementation='css'>
+      <Hidden lgDown implementation='css'>
         <Link
           id='logo-block'
           smooth
@@ -216,7 +216,7 @@ function ResponsiveDrawer() {
               edge='start'
               onClick={handleDrawerToggle}
               className={classes.menuButton}
-            >
+              size="large">
               <MenuIcon />
             </IconButton>
             <div
@@ -263,7 +263,7 @@ function ResponsiveDrawer() {
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden mdDown implementation='css'>
+        <Hidden lgDown implementation='css'>
           <Drawer
             classes={{
               paper: classes.drawerPaper,
