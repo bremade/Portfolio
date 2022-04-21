@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/asim/go-micro/v3/util/log"
 	"github.com/bremade/Portfolio/model"
-	"github.com/micro/go-micro/util/log"
 )
 
 func GetEnvDefault(env, defVal string) string {
