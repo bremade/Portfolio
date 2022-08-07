@@ -3,14 +3,11 @@ package api
 import (
 	"net/http"
 
-	"github.com/bremade/Portfolio/mail"
+	"github.com/bremade/Portfolio/control"
 	"github.com/bremade/Portfolio/model"
 	"github.com/bremade/Portfolio/util"
 	"github.com/gin-gonic/gin"
 )
-
-
-
 
 func (api *Api) SendMail(c *gin.Context) {
     var mailRequest model.MailRequest
@@ -23,14 +20,14 @@ func (api *Api) SendMail(c *gin.Context) {
     }
 
     clientSecret := util.GetEnvDefault("CAPTCHA_SECRET", "")
-    err = util.CheckRecaptcha(clientSecret, mailRequest.Token);
+    err = control.CheckRecaptcha(clientSecret, mailRequest.Token);
 
     if err != nil {
         c.String(http.StatusBadRequest, "Captcha token is invalid")
         return
     }
 
-    mr := mail.NewMailRequest(mailRequest.Email, mailRequest.Name, mailRequest.Message);
+    mr := control.NewMailRequest(mailRequest.Email, mailRequest.Name, mailRequest.Message);
     err = mr.SendMail()
 
     if err != nil {

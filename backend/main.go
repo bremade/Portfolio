@@ -38,6 +38,9 @@ func main() {
 	// Mail
 	apiRouter.POST("/mail/send", api.SendMail)
 
+	// Ghost
+	apiRouter.GET("/blog/retrieve", api.RetrieveRandomBlogPosts)
+
 	err := router.Run(":" + port)
 	errorHandler(err, 2)
 }

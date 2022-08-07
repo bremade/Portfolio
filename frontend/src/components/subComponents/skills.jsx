@@ -101,7 +101,7 @@ function SimpleDialog(props) {
           <b>30%-50%</b>: I have worked with it in projects
         </p>
         <p>
-          <b>0%-30%</b>: I'm currently learning this technology
+          <b>0%-30%</b>: I&apos;m currently learning this technology
         </p>
       </div>
     </Dialog>
