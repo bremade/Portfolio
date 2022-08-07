@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ShareIcon from '@mui/icons-material/Share';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Typography from '@mui/material/Typography';
@@ -19,16 +20,9 @@ import DsPreview from '../../images/blog.png';
 import { getRandomPosts, beautifyDate } from '../../scripts/blogUtils';
 import { v4 as uuidv4 } from 'uuid';
 
-/**
- * TODOS
- * 1. Get Posts and extract information
- * 2. Build card correctly
- * 3. Render card appropiatly
- */
-
 function createCard(
   keyId,
-  projectImg,
+  blogImg,
   userpic,
   username,
   title,
@@ -36,8 +30,8 @@ function createCard(
   body,
   link,
 ) {
-  if (projectImg === null) {
-    projectImg = Git;
+  if (!blogImg) {
+    blogImg = Git;
   }
 
   return (
@@ -52,7 +46,7 @@ function createCard(
         title={title}
         subheader={date}
       />
-      <CardMedia className='blogCardMedia' image={projectImg} title={title} />
+      <CardMedia className='blogCardMedia' image={blogImg} title={title} />
       <CardContent>
         <Typography
           variant='body2'
@@ -64,13 +58,14 @@ function createCard(
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='settings' href={link} size="large">
+        <IconButton aria-label='settings' href={link} size='large'>
           <ExitToAppIcon />
         </IconButton>
         <IconButton
           aria-label='share'
           href={`mailto:?subject=${title}&body=${link}`}
-          size="large">
+          size='large'
+        >
           <ShareIcon />
         </IconButton>
       </CardActions>
@@ -88,12 +83,9 @@ class Blog extends Component {
 
   componentDidMount() {
     const getPostIds = async () => {
-      const URL = 'https://blog.bremauer.cc/ghost/api/v3/content/posts';
-      const key = process.env.GHOST_KEY;
-      var URI = `${URL}?key=${key}&include=authors`;
-
-      var posts = await fetch(URI)
-        .then((resp) => resp.json())
+      var randomPosts = await axios
+        .get('/api/v1/blog/retrieve')
+        .then((resp) => resp.data)
         .then((data) => {
           let posts = [];
           data['posts'].forEach((post) => {
@@ -103,9 +95,6 @@ class Blog extends Component {
         })
         .catch('getPostIds: error while retrieving blog posts.');
 
-      var randomPosts = getRandomPosts(posts, 3);
-      // TODO: BRE-6: remove after testing is done
-      //console.log(randomPosts);
       this.setState({ posts: randomPosts });
     };
 

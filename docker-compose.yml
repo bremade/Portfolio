@@ -23,6 +23,7 @@ services:
       - MAIL_USERNAME=${MAIL_USERNAME}
       - MAIL_PASSWORD=${MAIL_PASSWORD}
       - DATABASE_URI=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@database:${DATABASE_PORT}/website
+      - GHOST_KEY=${GHOST_KEY}
     volumes:
       - ./backend/src:/srv/app/bremauer-backend/src
 
