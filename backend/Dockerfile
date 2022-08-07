@@ -10,7 +10,7 @@ FROM debian:buster
 WORKDIR /opt/Portfolio
 COPY --from=certificates /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=backend-builder /opt/Portfolio/portfolio_bin ./portfolio_bin
-COPY --from=backend-builder /opt/Portfolio/mail/templates/main.html ./mail/templates/main.html
+COPY --from=backend-builder /opt/Portfolio/control/templates/main.html ./control/templates/main.html
 
 ENV GIN_MODE=release
 CMD ["/opt/Portfolio/portfolio_bin"]
