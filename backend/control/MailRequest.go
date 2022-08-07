@@ -1,4 +1,4 @@
-package mail
+package control
 
 import (
 	"bytes"
@@ -44,18 +44,18 @@ func (mr *MailRequest) SendMail() error {
 		Message: mr.body,
 	}
 
-	err := mr.parseTemplate("./mail/templates/main.html", templateData)
+	err := mr.parseTemplate("./control/templates/main.html", templateData)
 	if err != nil {
 		return err
 	}
 
     message := gomail.NewMessage()
-    message.SetHeader("From", message.FormatAddress(mr.from, mr.name))
+    message.SetHeader("From", "bremauer.jan@gmx.de")
     message.SetHeader("To", mr.to)
     message.SetHeader("Subject", mr.subject)
     message.SetBody("text/html", mr.body)
 
-    dialer := gomail.NewDialer("smtp.gmail.com", 587, mailUsername, mailPassword)
+    dialer := gomail.NewDialer("mail.gmx.net", 587, mailUsername, mailPassword)
 
     // Send mail
     return dialer.DialAndSend(message)
