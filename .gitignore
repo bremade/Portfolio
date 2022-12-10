@@ -31,3 +31,28 @@ frontend/.local.eslintrc
 
 # Testing
 */__pycache__
+
+#######################
+####   Intellij    ####
+#######################
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/Portfolio.iml
+.idea/modules.xml
+.idea/inspectionProfiles/Project_Default.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+## File-based project format:
+*.iws

@@ -67,7 +67,7 @@ function ListItemLink(props) {
       <Link
         smooth
         to={to}
-        scroll={(el) => scrollWithOffset(el, 76)}
+        scroll={(el) => scrollWithOffset(el, 65)}
         {...linkProps}
         ref={ref}
       />

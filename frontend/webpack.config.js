@@ -52,11 +52,11 @@ const config = {
   devServer: {
     historyApiFallback: true,
     static: './',
-    port: 8000,
+    port: 9000,
     hot: true,
     proxy: {
       '/api/*': {
-        target: 'http://localhost:9000/',
+        target: 'http://localhost:8000/',
         secure: 'false',
       },
     },
