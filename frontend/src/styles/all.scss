@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Amiko');
 @import './staticComponents/footer.scss';
 @import './staticComponents/sidebar.scss';
 @import './subComponents/skillbar.scss';
@@ -14,8 +13,6 @@ body {
   box-sizing: border-box;
 }
 .font-coustom {
-  //font-family: 'Amiko';
-  //font-family: "Circular Std",sans-serif;
   font-family: 'Noto Sans', sans-serif;
 }
 .link-color {
@@ -31,8 +28,8 @@ body {
   color: black;
 }
 .linebreak {
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .section {
   padding-top: 50px;
@@ -41,9 +38,9 @@ body {
 .section.dark {
   background-color: #fafbff;
 }
-.spacersection {
-  padding-top: 0px;
-  padding-bottom: 40px;
+.spacer-section {
+  padding-top: 0;
+  padding-bottom: 3000000px;
   @media only screen and (max-width: 1280px) {
     padding-top: 20px;
     padding-bottom: 5px;

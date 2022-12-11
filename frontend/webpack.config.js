@@ -8,6 +8,7 @@ const CopyWebPackPlugin = require('copy-webpack-plugin');
 
 const SRC_DIR = path.join(__dirname, 'src');
 const SCRIPT_DIR = SRC_DIR + '/scripts';
+const COMPLIANCE_DIR = path.join(__dirname, 'compliance');
 const BUILD_DIR = path.join(__dirname, 'build');
 const REACT_DIR = path.join(__dirname, 'node_modules', 'react');
 
@@ -44,6 +45,9 @@ const config = {
     }),
     new CopyWebPackPlugin({
       patterns: [{ from: SCRIPT_DIR, to: BUILD_DIR + '/scripts' }],
+    }),
+    new CopyWebPackPlugin({
+      patterns: [{ from: COMPLIANCE_DIR, to: BUILD_DIR + '/compliance' }],
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.config().parsed), // it will automatically pick up key values from .env file
