@@ -39,7 +39,6 @@ go run main.go
 | DATABASE_USER     | string |
 | DATABASE_PASSWORD | string |
 | DATABASE_PORT     | int    |
-| CAPTCHA_SECRET    | string |
 | MAIL_USERNAME     | string |
 | MAIL_PASSWORD     | string |
 | GHOST_KEY         | string |

@@ -17,7 +17,6 @@ services:
     restart: always
     environment:
       - PORT=${WEBSITE_PORT}
-      - CAPTCHA_SECRET=${CAPTCHA_SECRET}
       - MAIL_USERNAME=${MAIL_USERNAME}
       - MAIL_PASSWORD=${MAIL_PASSWORD}
       - DATABASE_URI=postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@databasePostgres:${DATABASE_PORT}/default
