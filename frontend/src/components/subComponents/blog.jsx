@@ -17,7 +17,7 @@ import {
 import Git from '../../images/git.png';
 import Profile from '../../images/profil.png';
 import DsPreview from '../../images/blog.png';
-import { getRandomPosts, beautifyDate } from '../../scripts/blogUtils';
+import { beautifyDate } from '../../scripts/blogUtils';
 import { v4 as uuidv4 } from 'uuid';
 
 function createCard(
