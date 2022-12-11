@@ -5,7 +5,6 @@ import (
 
 	"github.com/bremade/Portfolio/control"
 	"github.com/bremade/Portfolio/model"
-	"github.com/bremade/Portfolio/util"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,15 +17,6 @@ func (api *Api) SendMail(c *gin.Context) {
         c.String(http.StatusBadRequest, "Bad Request: " + err.Error())
         return
     }
-
-    clientSecret := util.GetEnvDefault("CAPTCHA_SECRET", "")
-    err = control.CheckRecaptcha(clientSecret, mailRequest.Token);
-
-    if err != nil {
-        c.String(http.StatusBadRequest, "Captcha token is invalid")
-        return
-    }
-
     mr := control.NewMailRequest(mailRequest.Email, mailRequest.Name, mailRequest.Message);
     err = mr.SendMail()
 

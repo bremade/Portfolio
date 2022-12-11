@@ -1,16 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import ReCAPTCHA from 'react-google-recaptcha';
 import Toast from 'light-toast';
 import { useForm } from 'react-hook-form';
-
-const SITE_KEY = '6LehhVYaAAAAAEnJ3ynfzXqdA9k4PtEh3x63---T';
-const recaptchaRef = React.createRef();
+import { checkCaptchaAnswer } from '../../scripts/captchaUtils';
 
 async function onSubmit(data) {
-  const token = await recaptchaRef.current.executeAsync();
-
-  if (token != '') {
+  if (checkCaptchaAnswer(data.captcha)) {
     axios({
       method: 'POST',
       url: '/api/v1/mail/send',
@@ -18,7 +13,6 @@ async function onSubmit(data) {
         name: data.name,
         email: data.email,
         message: data.message,
-        token: token,
       },
     })
       .then(() => {
@@ -27,6 +21,8 @@ async function onSubmit(data) {
       .catch(() => {
         Toast.fail('Message could not be sent.');
       });
+  } else {
+    Toast.fail('Request was declined to prevent spam. Please add a correct answer.');
   }
 }
 
@@ -95,19 +91,33 @@ function EmailForm() {
             )}
           </div>
         </div>
+        <div>
+          <div className='inputWrapper'>
+            <input
+                className='customForm'
+                type='text'
+                {...register('captcha', {
+                  required: 'This field is required.',
+                  pattern: {
+                    value: /^(mon|tues|wednes|thurs|fri|satur|sun)day$/i,
+                    message: 'Please provide a valid day of the week.',
+                  },
+                })}
+                rows='5'
+                placeholder='Tomorrows weekday'
+            />
+            {errors.captcha && (
+                <p className='inputError'>{errors.captcha.message}</p>
+            )}
+          </div>
+        </div>
         <div className='buttonRow'>
           <button type='submit' className='customButton'>
             Submit
           </button>
         </div>
-        <small className='captchaPolicy'>
-          This site is protected by reCAPTCHA and the Google
-          <a href='https://policies.google.com/privacy'>Privacy Policy</a> and
-          <a href='https://policies.google.com/terms'>Terms of Service</a>
-          apply.
-        </small>
       </form>
-      <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} size='invisible' />
+
     </div>
   );
 }

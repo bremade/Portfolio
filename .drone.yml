@@ -22,8 +22,6 @@ steps:
         from_secret: DATABASE_PASSWORD
       DATABASE_PORT:
         from_secret: DATABASE_PORT
-      CAPTCHA_SECRET:
-        from_secret: CAPTCHA_SECRET
       MAIL_USERNAME:
         from_secret: MAIL_USERNAME
       MAIL_PASSWORD:
