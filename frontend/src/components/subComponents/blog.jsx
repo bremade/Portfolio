@@ -16,7 +16,8 @@ import {
 } from '@mui/material';
 import Git from '../../images/git.png';
 import Profile from '../../images/profil.png';
-import DsPreview from '../../images/blog.png';
+import BaPreview from '../../images/bachelorarbeit.png';
+import Inno332Preview from '../../images/inno332.png';
 import { beautifyDate } from '../../scripts/blogUtils';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -103,16 +104,30 @@ class Blog extends Component {
 
   renderProjectContent() {
     var projectContent = [];
+    // Bachelorarbeit
     projectContent.push(
       createCard(
         uuidv4(),
-        DsPreview,
+        BaPreview,
         Profile,
         'Jan Bremauer',
         'Serverless Functions auf Kubernetes',
         beautifyDate('2022-03-03'),
         'Serverless ist ein aufstrebendes Paradigma des Cloud-Computings und der am schnellsten wachsende Cloud-Trend in den letzten Jahren',
         'https://blog.doubleslash.de/serverless-functions-auf-kubernetes-welche-open-source-loesung-ist-die-richtige/',
+      ),
+    );
+    // INNO-334
+    projectContent.push(
+      createCard(
+        uuidv4(),
+        Inno332Preview,
+        Profile,
+        'Jan Bremauer',
+        'Prozessverbesserungen durch IoT-Buttons',
+        beautifyDate('2023-05-05'),
+        'Eingefahrene Prozesse in der eigenen Unternehmensstruktur? IoT-Buttons können helfen, diese zu optimieren.',
+        'https://blog.doubleslash.de/prozessverbesserungen-durch-iot-buttons/',
       ),
     );
 

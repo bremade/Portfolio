@@ -40,6 +40,11 @@ import Jenkins from '../../images/jenkins.png';
 import Grafana from '../../images/grafana.png';
 import IntelliJ from '../../images/intellij.png';
 import Arduino from '../../images/arduino.png';
+import Apple from '../../images/apple.png';
+import Flutter from '../../images/flutter.png';
+import Spring from '../../images/spring.png';
+import VSC from '../../images/vsc.png';
+import Actions from '../../images/github-dark.png';
 
 // Needed for slider
 const useSliderStyles = makeStyles(() => ({
@@ -224,17 +229,17 @@ function Skills() {
             {renderCardContent('Go', Go)}
             {renderCardContent('JavaScript', JavaScript)}
             {renderCardContent('Python', Python)}
-            {renderCardContent('Bash', Bash)}
-            {renderCardContent('C++', Cpp)}
+
+            {renderCardContent('C/C++', Cpp)}
           </Grid>
           <Collapse in={devExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
-            {renderSliderContent('Java', 70)}
-            {renderSliderContent('Go', 30)}
+            {renderSliderContent('Java', 60)}
+            {renderSliderContent('Go', 20)}
             {renderSliderContent('JavaScript', 20)}
-            {renderSliderContent('Python', 20)}
+            {renderSliderContent('Python', 10)}
             {renderSliderContent('Bash', 10)}
-            {renderSliderContent('C++', 10)}
+            {renderSliderContent('C/C++', 5)}
           </Collapse>
         </Card>
         <Card className='skillCardRoot'>
@@ -275,15 +280,17 @@ function Skills() {
             {renderCardContent('Docker', Docker)}
             {renderCardContent('Kubernetes', Kubernetes)}
             {renderCardContent('Openshift', Openshift)}
+            {renderCardContent('Actions', Actions)}
             {renderCardContent('Jenkins', Jenkins)}
           </Grid>
           <Collapse in={opsExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
-            {renderSliderContent('AWS', 40)}
+            {renderSliderContent('AWS', 50)}
             {renderSliderContent('Docker', 50)}
-            {renderSliderContent('Kubernetes', 40)}
-            {renderSliderContent('Openshift', 10)}
+            {renderSliderContent('Kubernetes', 30)}
+            {renderSliderContent('Openshift', 5)}
             {renderSliderContent('Jenkins', 10)}
+            {renderSliderContent('Actions', 10)}
           </Collapse>
         </Card>
         <Card className='skillCardRoot'>
@@ -363,15 +370,19 @@ function Skills() {
             justifyContent={checkCentering()}
             alignItems='flex-start'
           >
-            {renderCardContent('Git', Git)}
             {renderCardContent('IntelliJ', IntelliJ)}
+            {renderCardContent('VSC', VSC)}
+            {renderCardContent('Git', Git)}
+            {renderCardContent('Bash', Bash)}
             {renderCardContent('Arduino', Arduino)}
             {renderCardContent('Grafana', Grafana)}
           </Grid>
           <Collapse in={vcExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
+            {renderSliderContent('IntelliJ', 70)}
+            {renderSliderContent('VSC', 50)}
             {renderSliderContent('Git', 50)}
-            {renderSliderContent('IntelliJ', 50)}
+            {renderSliderContent('Bash', 50)}
             {renderSliderContent('Arduino', 20)}
             {renderSliderContent('Grafana', 10)}
           </Collapse>
@@ -410,12 +421,16 @@ function Skills() {
             justifyContent={checkCentering()}
             alignItems='flex-start'
           >
+            {renderCardContent('Spring-Boot', Spring)}
+            {renderCardContent('Flutter', Flutter)}
             {renderCardContent('ReactJS', ReactJS)}
             {renderCardContent('NodeJS', NodeJS)}
             {renderCardContent('Android', Android)}
           </Grid>
           <Collapse in={fwExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
+            {renderSliderContent('Spring-Boot', 50)}
+            {renderSliderContent('Flutter', 30)}
             {renderSliderContent('ReactJS', 30)}
             {renderSliderContent('NodeJS', 10)}
             {renderSliderContent('Android', 10)}
@@ -455,12 +470,14 @@ function Skills() {
             justifyContent={checkCentering()}
             alignItems='flex-start'
           >
+            {renderCardContent('Mac OS (Active)', Apple)}
             {renderCardContent('Windows', Windows)}
             {renderCardContent('Ubuntu', Ubuntu, true)}
           </Grid>
           <Collapse in={osExpanded} timeout='auto' unmountOnExit>
             <Divider variant='middle' />
-            {renderSliderContent('Windows', 60)}
+            {renderSliderContent('Mac OS', 50)}
+            {renderSliderContent('Windows', 50)}
             {renderSliderContent('Ubuntu', 50)}
           </Collapse>
         </Card>

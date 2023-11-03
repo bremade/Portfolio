@@ -21,8 +21,7 @@ function About() {
           Hello, my name is Jan.
         </Typography>
         <Typography variant='body1' className='aboutText'>
-          Im a {calculateAge()} year old Backend Developer and Computer Science
-          student from Munich, Germany. <br />
+          Im a {calculateAge()} year old Cloud and Backend Developer from Munich, Germany. <br />
           I&apos;m currently working as a Dev-Ops Java developer.
         </Typography>
         <Typography variant='body1' className='aboutText'></Typography>
@@ -33,8 +32,8 @@ function About() {
         >
           <strong>Current Focus:</strong>
           <ul>
-            <li>Professional: Java // Backend Development</li>
-            <li>Private: Golang // React</li>
+            <li>Professional: Java // Cloud/Backend Development</li>
+            <li>Private: Golang // Flutter // Kubernetes</li>
           </ul>
         </Typography>
       </div>

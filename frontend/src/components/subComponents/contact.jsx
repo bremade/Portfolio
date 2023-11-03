@@ -43,7 +43,7 @@ function Contact() {
                       <div className='col-xs-4'>
                         <div className='row'>
                           <div className='col-md-12 d-flex justify-content-center text-center'>
-                            <a href='https://www.linkedin.com/in/jan-bremauer-2a603611b/'>
+                            <a href='https://www.linkedin.com/in/janbremauer/'>
                               <IconBox icon={LinkedInIcon} />
                             </a>
                           </div>

@@ -20,7 +20,7 @@ function Experience() {
             }}
             date='2021 - present'
             iconStyle={{ background: '#912c31', color: '#fff' }}
-            icon={<SchoolIcon />}
+            icon={<WorkIcon />}
           >
             <h3 className='vertical-timeline-element-title timelineText'>
               Software Developer @doubleSlash Net-Business GmbH
@@ -29,8 +29,8 @@ function Experience() {
               Munich, Germany
             </h4>
             <p>
-              Java Backend Development <br /> Java // Docker // AWS //
-              PostgreSQL
+              Java Backend Development <br />
+              Spring-Boot // Kubernetes // AWS // Docker // PostgreSQL
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
