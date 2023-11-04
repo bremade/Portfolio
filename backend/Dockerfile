@@ -1,4 +1,4 @@
-FROM golang:1.15.0-buster AS backend-builder
+FROM golang AS backend-builder
 WORKDIR /opt/Portfolio
 COPY ./backend .
 RUN go build -o portfolio_bin
