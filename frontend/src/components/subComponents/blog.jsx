@@ -83,23 +83,15 @@ class Blog extends Component {
   }
 
   componentDidMount() {
-    const getPostIds = async () => {
-      var randomPosts = await axios
+
+    axios
         .get('/api/v1/blog/retrieve')
         .then((resp) => resp.data)
         .then((data) => {
-          let posts = [];
-          data['posts'].forEach((post) => {
-            posts.push(post);
-          });
-          return posts;
+          const posts = data['posts'].map((post) => post);
+          this.setState({ posts });
         })
         .catch('getPostIds: error while retrieving blog posts.');
-
-      this.setState({ posts: randomPosts });
-    };
-
-    getPostIds();
   }
 
   renderProjectContent() {
