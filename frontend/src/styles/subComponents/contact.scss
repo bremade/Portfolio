@@ -5,10 +5,6 @@
 .customForm {
   box-shadow: 0 0 15px #b8b8b8;
   padding: 0.9375rem 0.625rem;
-  padding-top: 0.9375rem;
-  padding-right: 0.625rem;
-  padding-bottom: 0.9375rem;
-  padding-left: 0.625rem;
   width: 100%;
   border: 0;
   background-color: #f1f1f1;
@@ -57,13 +53,14 @@
   text-align: center;
 }
 
-.customButton {
+.submitButton {
   padding: 0.6rem 1.7rem;
   color: #fff;
   background-color: #912c31;
   border-radius: 6%;
   position: relative;
   width: auto;
+  border: none;
   -webkit-transition: color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
     background-color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: color 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
@@ -99,6 +96,7 @@
 
 .mSocial {
   margin-top: 0.5rem;
+  gap: 4px;
   @media only screen and (max-width: 1280px) {
     margin-top: 1.25rem;
     margin-bottom: 0.75rem;

@@ -4,7 +4,7 @@ import Toast from 'light-toast';
 import { useForm } from 'react-hook-form';
 import { checkCaptchaAnswer } from '../../scripts/captchaUtils';
 
-async function onSubmit(data) {
+function onSubmit(data) {
   if (checkCaptchaAnswer(data.captcha)) {
     axios({
       method: 'POST',
@@ -60,7 +60,7 @@ function EmailForm() {
                 required: 'This field is required.',
                 pattern: {
                   value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                  message: 'Please provide a valid email adress.',
+                  message: 'Please provide a valid email address.',
                 },
               })}
               placeholder='Your email'
@@ -112,7 +112,7 @@ function EmailForm() {
           </div>
         </div>
         <div className='buttonRow'>
-          <button type='submit' className='customButton'>
+          <button type='submit' className='submitButton'>
             Submit
           </button>
         </div>

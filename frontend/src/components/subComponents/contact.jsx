@@ -40,7 +40,7 @@ function Contact() {
                   </div>
                   <div className='col-md-12 mt-5 contactBox'>
                     <div className='row justify-content-center mSocial'>
-                      <div className='col-xs-4'>
+                      <div className='col-xs-4 mSocialResp'>
                         <div className='row'>
                           <div className='col-md-12 d-flex justify-content-center text-center'>
                             <a href='https://www.linkedin.com/in/janbremauer/'>
@@ -87,7 +87,7 @@ function Contact() {
                 </div>
               </div>
               <div className='col-md-5 colOffset contactBox'>
-                <EmailForm />
+                <EmailForm></EmailForm>
               </div>
             </div>
           </div>
