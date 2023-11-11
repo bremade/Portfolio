@@ -22,16 +22,17 @@ jobs:
 
     steps:
     # This step checks out a copy of your repository
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     # This step sets up a Node.js environment with the specified version
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
     # This step builds your Node.js project
-    - name: Build
+    - name: Build project
       run: |
         npm install
         npm run build
