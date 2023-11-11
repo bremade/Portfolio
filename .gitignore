@@ -56,3 +56,4 @@ frontend/.local.eslintrc
 
 ## File-based project format:
 *.iws
+megalinter-reports/
