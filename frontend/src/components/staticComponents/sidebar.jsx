@@ -246,35 +246,37 @@ function ResponsiveDrawer() {
           </Toolbar>
         </AppBar>
       </Hidden>
-      <nav className={classes.drawer} aria-label='mailbox folders'>
-        <Hidden lgUp implementation='css'>
-          <Drawer
-            variant='temporary'
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: 'drawerPaper',
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden lgDown implementation='css'>
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant='permanent'
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
+      <div className={classes.drawer}>
+        <nav aria-label='mailbox folders'>
+          <Hidden lgUp implementation='css'>
+            <Drawer
+              variant='temporary'
+              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              classes={{
+                paper: 'drawerPaper',
+              }}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
+          <Hidden lgDown implementation='css'>
+            <Drawer
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+              variant='permanent'
+              open
+            >
+              {drawer}
+            </Drawer>
+          </Hidden>
+        </nav>
+      </div>
     </div>
   );
 }
