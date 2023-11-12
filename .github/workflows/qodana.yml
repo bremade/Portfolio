@@ -1,9 +1,10 @@
 name: Qodana
+
 on:
   pull_request:
     branches:
-        - "main"
-        - "dev"
+        - main
+        - dev
 
 jobs:
   analysis:
