@@ -28,11 +28,13 @@ steps:
         from_secret: MAIL_PASSWORD
       GHOST_KEY:
         from_secret: GHOST_KEY
-    when:
-      branch:
-        - main
-      event:
-        - push
+
+trigger:
+  branch:
+    - main
+    - dev
+  event:
+    - push
 
 volumes:
   - name: docker_socket
