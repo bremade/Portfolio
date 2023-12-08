@@ -16,8 +16,6 @@ function checkCaptchaAnswer(answer) {
     answer = answer.toLowerCase();
     const weekdayIndex = weekdays.indexOf(answer);
     const tomorrowIndex = moment().clone().add(1,'days').weekday();
-    console.log(`weekdayIndex: ${weekdayIndex}`);
-    console.log(`tomorrowIndex: ${tomorrowIndex}`);
     return tomorrowIndex === weekdayIndex;
 }
 
