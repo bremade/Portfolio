@@ -16,9 +16,9 @@ function Imprint() {
           <p>
             Jan Bremauer
             <br />
-            Walpurgisstra&szlig;e 7
+            Metzstra&szlig;e 38
             <br />
-            81677 M&uuml;nchen
+            81667 M&uuml;nchen
           </p>
           <h3>Kontakt</h3>
           <p>E-Mail: jan@bremauer.cc</p>
