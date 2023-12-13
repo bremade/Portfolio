@@ -40,5 +40,6 @@
     "checkCentering": "readonly",
     "checkPictureDimension": "readonly",
     "scrollWithOffset": "readonly"
-  }
+  },
+  "ignorePatterns": ["node_modules/", ".github/workflows"]
 }

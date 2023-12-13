@@ -187,7 +187,7 @@ class CardsCollection extends Component {
           </Button>
           <Button
             variant='contained'
-            onClick={() => window.location.reload(true)}
+            onClick={() => window.location.reload}
             style={{ marginLeft: '20px' }}
           >
             Reload
