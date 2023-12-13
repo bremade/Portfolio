@@ -1,4 +1,4 @@
-FROM golang AS backend-builder
+FROM golang:bullseye AS backend-builder
 WORKDIR /opt/Portfolio
 COPY ./backend .
 RUN go build -o portfolio_bin
@@ -6,7 +6,7 @@ RUN go build -o portfolio_bin
 FROM alpine:latest as certificates
 RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates
 
-FROM debian:buster
+FROM debian:bullseye
 WORKDIR /opt/Portfolio
 COPY --from=certificates /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=backend-builder /opt/Portfolio/portfolio_bin ./portfolio_bin
